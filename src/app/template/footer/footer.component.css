@@ -1,0 +1,17 @@
+p{
+    font-size: 1rem;
+    margin-top: -10px;
+  }
+  footer{
+    background-color: #f7efe1;
+    color: #102846;
+    padding: 0px 10px 10px 10px;
+  }
+  a{
+    text-decoration: none;
+    color: #102846;
+  }
+  img{
+    height: 1rem;
+    margin-right: 5px;
+  }
