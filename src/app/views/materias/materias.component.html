@@ -1,1 +1,3 @@
-<p>materias works!</p>
+<div *ngIf="matters.at(0)?.nome">
+    <app-materia-cards *ngFor="let matter of matters" [matterName]="matter.nome"></app-materia-cards>
+</div>
