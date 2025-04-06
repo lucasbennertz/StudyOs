@@ -1,3 +1,16 @@
 <mat-card appearance="outlined">
-    <mat-card-content>{{matterName}}</mat-card-content>
+    <mat-card-content>
+        <span class="left" *ngIf="!editMode">{{matterName}}</span>
+        <span class="left" *ngIf="editMode">
+            <input type="text" [value]="matterName" #inputName >
+            <button (click)="updateName(inputName.value, matterId)">
+                <mat-icon>check</mat-icon>
+            </button>
+        </span>
+        <span class="right"> 
+            <button (click)="alterarNome()">
+                <mat-icon>{{ editMode ? 'close' : 'edit'}}</mat-icon>
+            </button>
+        </span>
+    </mat-card-content>
 </mat-card>

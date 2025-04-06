@@ -1,0 +1,25 @@
+mat-card{
+    margin: 8px;
+    background-color: #f7efe1;
+    border: none;
+    box-shadow: 0px 0px 5px 0.5px grey;
+}
+mat-card-content{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+.left, .right{
+    display: flex;
+    align-items: center;
+} 
+input{
+    height: 1.7rem;
+    font-size: 1rem;
+    background-color: #f7efe1;
+    border: 1px solid grey;
+}
+button{
+    border: none;
+    background-color: #f7efe1;
+}

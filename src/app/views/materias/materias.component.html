@@ -1,3 +1,3 @@
-<div *ngIf="matters.at(0)?.nome">
-    <app-materia-cards *ngFor="let matter of matters" [matterName]="matter.nome"></app-materia-cards>
+<div *ngIf="matters.length > 0">
+    <app-materia-cards *ngFor="let matter of matters" [matterName]="matter.nome" [matterId]="matters.indexOf(matter)"></app-materia-cards>
 </div>
