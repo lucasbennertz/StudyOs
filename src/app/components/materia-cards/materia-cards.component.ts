@@ -19,9 +19,9 @@ import { EventEmitter } from '@angular/core';
 export class MateriaCardsComponent implements OnInit{
   @Input() matterName!: string;
   @Input() matterId! : number;
-  editMode: boolean = false;
   newName: string = '';
   @Output() atualizou = new EventEmitter();
+  @Input({required: false}) editMode: boolean = false;
 
   constructor(private service: MateriasService){}
 

@@ -3,12 +3,14 @@ import { MatterModel } from './materia.model';
 import { MateriasService } from './materias.service';
 import { MateriaCardsComponent } from '../../components/materia-cards/materia-cards.component';
 import { CommonModule } from '@angular/common';
+import { CreateComponent } from "../../components/materia-cards/create/create.component";
 @Component({
   selector: 'app-materias',
   imports: [
     MateriaCardsComponent,
-    CommonModule
-  ],
+    CommonModule,
+    CreateComponent,
+],
   templateUrl: './materias.component.html',
   styleUrl: './materias.component.css'
 })
@@ -22,6 +24,7 @@ export class MateriasComponent implements OnInit{
   carregarMaterias(){
     this.materiasService.readMatter().subscribe({
       next: (materias) => {
+        console.log(materias)
         this.matters = materias
       },
       error: (err) => {
