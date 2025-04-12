@@ -16,4 +16,7 @@ export class MateriasService {
   changeName(matterId : number, newMatterName: string): Observable<MatterModel>{
     return this.http.put<MatterModel>(this.baseurl + "/" + matterId, {"nome" : newMatterName});
   }
+  deleteMatter(matterId : number): Observable<MatterModel[]>{
+    return this.http.delete<MatterModel[]>(this.baseurl + "/" + matterId)
+  }
 }

@@ -17,9 +17,16 @@ export class MateriasComponent implements OnInit{
 
   constructor(private materiasService: MateriasService){}
   ngOnInit(): void {
-    this.materiasService.readMatter().subscribe(materias => {
-      this.matters = materias
-      console.log(materias)
-    })
+    this.carregarMaterias()
   }
+  carregarMaterias(){
+    this.materiasService.readMatter().subscribe({
+      next: (materias) => {
+        this.matters = materias
+      },
+      error: (err) => {
+        console.error("erro" + err)
+      }
+    })
+  }  
 }
