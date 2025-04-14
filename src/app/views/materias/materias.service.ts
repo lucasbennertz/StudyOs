@@ -8,23 +8,24 @@ import { AnnotationModel } from './annotation.model';
   providedIn: 'root'
 })
 export class MateriasService {
-  baseurl: string = "http://localhost:8080/matters";
+  annotationUrl: string = "http://localhost:8080/annotations"
+  mattersUrl: string = "http://localhost:8080/matters";
   constructor(private http: HttpClient) {}
 
   readMatter(): Observable<MatterModel[]>{
-    return this.http.get<MatterModel[]>(this.baseurl);
+    return this.http.get<MatterModel[]>(this.mattersUrl);
   }
-  changeName(matterId : number, newMatterName: string): Observable<MatterModel>{
-    return this.http.put<MatterModel>(this.baseurl + "/" + matterId, {"nome" : newMatterName});
+  changeMatterName(matterId : number, newMatterName: string): Observable<MatterModel>{
+    return this.http.put<MatterModel>(this.mattersUrl + "/" + matterId, {"nome" : newMatterName});
   }
   deleteMatter(matterId : number): Observable<MatterModel[]>{
-    return this.http.delete<MatterModel[]>(this.baseurl + "/" + matterId)
+    return this.http.delete<MatterModel[]>(this.mattersUrl + "/" + matterId)
   }
   createMatter(matterName: String): Observable<MatterModel>{
-    return this.http.post<MatterModel>(this.baseurl, {"nome" : matterName})
+    return this.http.post<MatterModel>(this.mattersUrl, {"nome" : matterName})
   }
   getAnnotations(matterId: number): Observable<AnnotationModel[]>{
     matterId = matterId + 1
-    return this.http.get<AnnotationModel[]>(this.baseurl + "/" + matterId + "/" + "annotations");
+    return this.http.get<AnnotationModel[]>(this.mattersUrl + "/" + matterId + "/" + "annotations");
   }
 }

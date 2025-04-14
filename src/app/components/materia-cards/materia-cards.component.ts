@@ -35,7 +35,7 @@ export class MateriaCardsComponent implements OnInit{
   }
   updateName(newName: string, matterId: number){
     matterId = matterId + 1;
-    this.service.changeName(matterId,newName).subscribe({
+    this.service.changeMatterName(matterId,newName).subscribe({
       next: (res) => {
         console.log('resposta da API', res);
         this.matterName = res.nome;
