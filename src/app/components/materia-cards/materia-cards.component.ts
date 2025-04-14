@@ -5,13 +5,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 import { EventEmitter } from '@angular/core';
+import { AnnotationsCardsComponent } from '../annotations-cards/annotations-cards.component';
 @Component({
   selector: 'app-materia-cards',
   imports: [
     MatCardModule,
     MatIconModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    AnnotationsCardsComponent
   ],
   templateUrl: './materia-cards.component.html',
   styleUrl: './materia-cards.component.css'
@@ -22,7 +24,7 @@ export class MateriaCardsComponent implements OnInit{
   newName: string = '';
   @Output() atualizou = new EventEmitter();
   @Input({required: false}) editMode: boolean = false;
-
+  showAnnotations: boolean = false;
   constructor(private service: MateriasService){}
 
   ngOnInit(): void {
@@ -54,5 +56,8 @@ export class MateriaCardsComponent implements OnInit{
           this.atualizou.emit()
       }
     })
+  }
+  changeValue(){
+    this.showAnnotations = !this.showAnnotations
   }
 }

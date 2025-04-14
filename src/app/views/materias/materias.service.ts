@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatterModel } from './materia.model';
+import { AnnotationModel } from './annotation.model';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +22,9 @@ export class MateriasService {
   }
   createMatter(matterName: String): Observable<MatterModel>{
     return this.http.post<MatterModel>(this.baseurl, {"nome" : matterName})
+  }
+  getAnnotations(matterId: number): Observable<AnnotationModel[]>{
+    matterId = matterId + 1
+    return this.http.get<AnnotationModel[]>(this.baseurl + "/" + matterId + "/" + "annotations");
   }
 }
