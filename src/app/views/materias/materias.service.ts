@@ -28,4 +28,7 @@ export class MateriasService {
     matterId = matterId + 1
     return this.http.get<AnnotationModel[]>(this.mattersUrl + "/" + matterId + "/" + "annotations");
   }
+  changeAnnotationName(annotationId: number, newAnnotationName: string): Observable<AnnotationModel>{
+    return this.http.put<AnnotationModel>(this.annotationUrl + "/" + annotationId + "/" + "rename", {"title" : newAnnotationName});
+  }
 }

@@ -1,25 +1,70 @@
-mat-card{
-    margin: 8px;
+/* Estilo do card */
+mat-card {
+    margin: 8px auto;
     background-color: #f7efe1;
     border: none;
     box-shadow: 0px 0px 5px 0.5px grey;
-}
-mat-card-content{
+    max-width: 95vw; /* Garante que o card não passe da tela */
+    width: 100%;
+  }
+  
+  
+  /* Conteúdo do card */
+  mat-card-content {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  /* Lado esquerdo (texto) */
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Estilo do título */
+  .left p {
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Estilo da descrição */
+  .left ul {
+    padding-left: 1rem;
+    margin: 0.25rem 0 0 0;
+    list-style-type: disc;
+  }
+  
+  .left li {
+    font-size: 0.95rem;
+  }
+  .left div{
+    display: flex;
+    justify-content: center;
 }
-.left, .right{
+  
+  /* Lado direito (ações, opcional) */
+  .right {
     display: flex;
     align-items: center;
-}
-input{
+    gap: 0.5rem;
+  }
+  
+  /* Input genérico */
+  input {
     height: 1.7rem;
     font-size: 1rem;
     background-color: #f7efe1;
     border: 1px solid grey;
-}
-button{
+  }
+  
+  /* Botão genérico */
+  button {
     border: none;
     background-color: #f7efe1;
-}
+    cursor: pointer;
+  }
+  

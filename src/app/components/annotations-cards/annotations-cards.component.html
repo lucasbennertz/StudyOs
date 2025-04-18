@@ -1,3 +1,30 @@
-<div *ngFor="let ann of annotations">
-    <p>{{ann.annotationTitle}}</p>
-</div>
+<mat-card *ngFor="let ann of annotations">
+    <mat-card-content>
+      <div class="left">
+        <span class="left" *ngIf="!modoEdicao; else otroModo">{{ ann.title }}</span>
+  
+        <ng-template #otroModo>
+          <div class="input-group">
+            <input type="text" [value]="ann.title" #inputName>
+            <button (click)="mudarNome(annotations.indexOf(ann), inputName.value)">
+              <mat-icon>check</mat-icon>
+            </button>
+          </div>
+        </ng-template>
+  
+        <ul>
+          <li>{{ ann.description }}</li>
+        </ul>
+      </div>
+  
+      <div class="right">
+        <button mat-icon-button (click)="mudarValor()">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+  
