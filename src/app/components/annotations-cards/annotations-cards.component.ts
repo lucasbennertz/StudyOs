@@ -18,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
 })
 export class AnnotationsCardsComponent implements OnInit{
   annotations!: AnnotationModel[]
-  @Input() matterId!: number;
+  @Input() matterId!: string;
   modoEdicao : boolean = false;
 
   constructor(private service: MateriasService){}
@@ -33,13 +33,16 @@ export class AnnotationsCardsComponent implements OnInit{
       }
     })
   }
-  mudarNome(annotationId:number, newAnnotationName: string){
-    annotationId = annotationId + 1;
+  mudarNome(annotationId:string, newAnnotationName: string){
     this.service.changeAnnotationName(annotationId, newAnnotationName).subscribe({
       next: (res) => {
         console.log(res)
         this.modoEdicao = false
-        this.annotations[annotationId - 1].title = res.title
+        this.annotations.forEach((x) => {
+          if(x.id = annotationId){
+            x.title = newAnnotationName
+          }
+        })
       },
       error: (err) =>{
         console.log("Deu erro aqui irmão " + err)

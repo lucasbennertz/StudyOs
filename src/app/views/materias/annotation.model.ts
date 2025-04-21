@@ -1,4 +1,5 @@
 export interface AnnotationModel{
-    title: String;
-    description: String;
+    id: string;
+    title: string;
+    description: string;
 }

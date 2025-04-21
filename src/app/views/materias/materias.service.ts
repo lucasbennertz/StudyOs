@@ -15,20 +15,19 @@ export class MateriasService {
   readMatter(): Observable<MatterModel[]>{
     return this.http.get<MatterModel[]>(this.mattersUrl);
   }
-  changeMatterName(matterId : number, newMatterName: string): Observable<MatterModel>{
+  changeMatterName(matterId : string, newMatterName: string): Observable<MatterModel>{
     return this.http.put<MatterModel>(this.mattersUrl + "/" + matterId, {"nome" : newMatterName});
   }
-  deleteMatter(matterId : number): Observable<MatterModel[]>{
+  deleteMatter(matterId : string): Observable<MatterModel[]>{
     return this.http.delete<MatterModel[]>(this.mattersUrl + "/" + matterId)
   }
   createMatter(matterName: String): Observable<MatterModel>{
     return this.http.post<MatterModel>(this.mattersUrl, {"nome" : matterName})
   }
-  getAnnotations(matterId: number): Observable<AnnotationModel[]>{
-    matterId = matterId + 1
+  getAnnotations(matterId: string): Observable<AnnotationModel[]>{
     return this.http.get<AnnotationModel[]>(this.mattersUrl + "/" + matterId + "/" + "annotations");
   }
-  changeAnnotationName(annotationId: number, newAnnotationName: string): Observable<AnnotationModel>{
+  changeAnnotationName(annotationId: string, newAnnotationName: string): Observable<AnnotationModel>{
     return this.http.put<AnnotationModel>(this.annotationUrl + "/" + annotationId + "/" + "rename", {"title" : newAnnotationName});
   }
 }

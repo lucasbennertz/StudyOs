@@ -20,7 +20,7 @@ import { AnnotationsCardsComponent } from '../annotations-cards/annotations-card
 })
 export class MateriaCardsComponent implements OnInit{
   @Input() matterName!: string;
-  @Input() matterId! : number;
+  @Input() matterId! : string;
   newName: string = '';
   @Output() atualizou = new EventEmitter();
   @Input({required: false}) editMode: boolean = false;
@@ -33,8 +33,7 @@ export class MateriaCardsComponent implements OnInit{
   alterarNome(): void{
     this.editMode = !this.editMode
   }
-  updateName(newName: string, matterId: number){
-    matterId = matterId + 1;
+  updateName(newName: string, matterId: string){
     this.service.changeMatterName(matterId,newName).subscribe({
       next: (res) => {
         console.log('resposta da API', res);
@@ -48,7 +47,7 @@ export class MateriaCardsComponent implements OnInit{
         
       })
     }
-  deleteMatter(idMateria: number){
+  deleteMatter(idMateria: string){
     idMateria = idMateria + 1
     this.service.deleteMatter(idMateria).subscribe({
       next: (res) => {

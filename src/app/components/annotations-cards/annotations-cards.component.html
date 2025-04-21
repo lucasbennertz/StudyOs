@@ -6,7 +6,7 @@
         <ng-template #otroModo>
           <div class="input-group">
             <input type="text" [value]="ann.title" #inputName>
-            <button (click)="mudarNome(annotations.indexOf(ann), inputName.value)">
+            <button (click)="mudarNome(ann.id, inputName.value)">
               <mat-icon>check</mat-icon>
             </button>
           </div>
