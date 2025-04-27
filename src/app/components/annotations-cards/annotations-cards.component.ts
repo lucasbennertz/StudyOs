@@ -5,12 +5,14 @@ import { AnnotationModel } from '../../views/materias/annotation.model';
 import { MateriasService } from '../../views/materias/materias.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { CreateComponent } from './create/create.component';
 @Component({
   selector: 'app-annotations-cards',
   imports: [
     MatCardModule,
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    CreateComponent
   ],
   standalone:true,
   templateUrl: './annotations-cards.component.html',
@@ -23,6 +25,9 @@ export class AnnotationsCardsComponent implements OnInit{
 
   constructor(private service: MateriasService){}
   ngOnInit(): void {
+    this.carregarAnnotations();
+  }
+  carregarAnnotations(){
     this.service.getAnnotations(this.matterId).subscribe({
       next: (receivedAnnotations) => {
         this.annotations = receivedAnnotations;

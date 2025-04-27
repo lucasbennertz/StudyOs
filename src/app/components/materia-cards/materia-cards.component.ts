@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms'
 import { EventEmitter } from '@angular/core';
 import { AnnotationsCardsComponent } from '../annotations-cards/annotations-cards.component';
+import { CreateComponent } from '../annotations-cards/create/create.component';
 @Component({
   selector: 'app-materia-cards',
   imports: [
@@ -13,7 +14,8 @@ import { AnnotationsCardsComponent } from '../annotations-cards/annotations-card
     MatIconModule,
     CommonModule,
     FormsModule,
-    AnnotationsCardsComponent
+    AnnotationsCardsComponent,
+    CreateComponent
   ],
   templateUrl: './materia-cards.component.html',
   styleUrl: './materia-cards.component.css'

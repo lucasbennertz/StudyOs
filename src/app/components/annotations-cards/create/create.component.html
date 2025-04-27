@@ -1,0 +1,35 @@
+<mat-card>
+    <mat-card-content *ngIf="addMode; else plusMode" class="verdade">
+      <div class="left-and-button">
+        <div class="left">
+          <input type="text" #inputName placeholder="Nome">
+          <ul>
+            <li>
+              <input type="text" #inputDescription placeholder="Descrição">
+            </li>
+          </ul>
+        </div>
+        <div class="check-button">
+          <button (click)="createAnnotation(inputName.value, inputDescription.value)">
+            <mat-icon>check</mat-icon>
+          </button>
+        </div>
+      </div>
+      <div class="right">
+        <button (click)="changeAddMode()">
+          <mat-icon>close</mat-icon>
+        </button>
+      </div>
+    </mat-card-content>
+  
+    <ng-template #plusMode>
+      <mat-card-content class="mentira">
+        <div class="adicionar">
+          <button (click)="changeAddMode()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>    
+      </mat-card-content>
+    </ng-template>
+  </mat-card>
+  
