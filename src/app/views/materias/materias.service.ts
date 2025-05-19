@@ -33,5 +33,4 @@ export class MateriasService {
   createAnnotation(matterId: string, annotationName: string, annotationDescription: string): Observable<AnnotationModel>{
     return this.http.post<AnnotationModel>(this.annotationUrl + "/" + matterId, ({"title" : annotationName, "description" : annotationDescription }));
   }
-  deleteAnnotation()
 }
