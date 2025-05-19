@@ -7,10 +7,10 @@
                 <button (click)="updateName(inputName.value, matterId)">
                     <mat-icon>check</mat-icon>
                 </button>
-            </span>    
+            </span>
         </ng-template>
 
-        <span class="right"> 
+        <span class="right">
             <button (click)="alterarNome()">
                 <mat-icon>{{ editMode ? 'close' : 'edit'}}</mat-icon>
             </button>
@@ -21,5 +21,5 @@
     </mat-card-content>
 </mat-card>
 <div *ngIf="showAnnotations">
-    <app-annotations-cards [matterId]="matterId"></app-annotations-cards>
+    <app-annotations-cards [matterId]="matterId" (atualizou)="this.atualizou.emit()"></app-annotations-cards>
 </div>

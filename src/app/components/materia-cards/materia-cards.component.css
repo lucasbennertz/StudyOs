@@ -12,7 +12,7 @@ mat-card-content{
 .left, .right{
     display: flex;
     align-items: center;
-} 
+}
 input{
     height: 1.7rem;
     font-size: 1rem;

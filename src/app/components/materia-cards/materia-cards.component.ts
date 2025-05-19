@@ -15,7 +15,6 @@ import { CreateComponent } from '../annotations-cards/create/create.component';
     CommonModule,
     FormsModule,
     AnnotationsCardsComponent,
-    CreateComponent
   ],
   templateUrl: './materia-cards.component.html',
   styleUrl: './materia-cards.component.css'
@@ -46,15 +45,17 @@ export class MateriaCardsComponent implements OnInit{
       error: (err) => {
         console.error('Erro ao atualizar:', err)
       }
-        
+
       })
     }
   deleteMatter(idMateria: string){
-    idMateria = idMateria + 1
     this.service.deleteMatter(idMateria).subscribe({
       next: (res) => {
           console.log("resposta da api" + res)
           this.atualizou.emit()
+      },
+      error: (err) => {
+        console.log("correge que deu algo errado ai bro " + err)
       }
     })
   }
