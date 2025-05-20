@@ -1,7 +1,7 @@
+import { AnnotationModel } from './../../views/materias/annotation.model';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MateriaCardsComponent } from '../materia-cards/materia-cards.component';
-import { AnnotationModel } from '../../views/materias/annotation.model';
 import { MateriasService } from '../../views/materias/materias.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -42,7 +42,7 @@ export class AnnotationsCardsComponent implements OnInit {
           console.log(res);
           this.modoEdicao = false;
           this.annotations.forEach((x) => {
-            if ((x.id = annotationId)) {
+            if (x.id === annotationId) {
               x.title = newAnnotationName;
             }
           });
@@ -54,5 +54,17 @@ export class AnnotationsCardsComponent implements OnInit {
   }
   mudarValor() {
     this.modoEdicao = !this.modoEdicao;
+  }
+  deletarAnotacao(annotationId: string){
+    this.service.deleteAnnotation(annotationId).subscribe({
+      next: (value) => {
+        console.log(value)
+        this.annotations = value
+        this.carregarAnnotations
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
   }
 }

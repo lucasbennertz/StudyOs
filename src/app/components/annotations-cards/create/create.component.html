@@ -5,7 +5,7 @@
           <input type="text" #inputName placeholder="Nome">
           <ul>
             <li>
-              <input type="text" #inputDescription placeholder="Descrição">
+              <input type="text" #inputDescription placeholder="Descrição" (keydown.enter)="createAnnotation(inputName.value, inputDescription.value)">
             </li>
           </ul>
         </div>
@@ -21,15 +21,14 @@
         </button>
       </div>
     </mat-card-content>
-  
+
     <ng-template #plusMode>
       <mat-card-content class="mentira">
         <div class="adicionar">
           <button (click)="changeAddMode()">
             <mat-icon>add</mat-icon>
           </button>
-        </div>    
+        </div>
       </mat-card-content>
     </ng-template>
   </mat-card>
-  

@@ -2,7 +2,7 @@
     <mat-card-content>
       <div class="left">
         <span class="left" *ngIf="!modoEdicao; else otroModo">{{ ann.title }}</span>
-  
+
         <ng-template #otroModo>
           <div class="input-group">
             <input type="text" [value]="ann.title" #inputName>
@@ -11,17 +11,17 @@
             </button>
           </div>
         </ng-template>
-  
+
         <ul>
           <li>{{ ann.description }}</li>
         </ul>
       </div>
-  
+
       <div class="right">
         <button mat-icon-button (click)="mudarValor()">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-icon-button>
+        <button mat-icon-button (click)="deletarAnotacao(ann.id)">
           <mat-icon>delete</mat-icon>
         </button>
       </div>

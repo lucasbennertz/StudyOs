@@ -8,7 +8,7 @@ mat-card {
     width: 100%;
     border-radius: 8px; /* Borda arredondada */
   }
-  
+
   /* Conteúdo do card */
   mat-card-content {
     display: flex;
@@ -17,49 +17,49 @@ mat-card {
     font-size: 1rem;
     padding: 1rem;
   }
-  
+
   /* Agrupamento dos inputs e botão check */
   .left-and-button {
     display: flex;
     align-items: center;
     gap: 1rem; /* Espaço entre inputs e botão */
   }
-  
+
   /* Lado esquerdo (inputs) */
   .left {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
+
   /* Estilo do título */
   .left p {
     font-weight: bold;
     margin: 0;
   }
-  
+
   /* Estilo da descrição */
   .left ul {
     padding-left: 1rem;
     margin: 0.25rem 0 0 0;
     list-style-type: none; /* Removi a bolinha da lista */
   }
-  
+
   .left li {
     font-size: 0.95rem;
     list-style: none;
     padding: 0;
   }
-  
+
   .left div {
     display: flex;
     justify-content: center;
   }
-  
+
   .left span {
     display: inline-block;
   }
-  
+
   /* Botão de confirmação (check) */
   .check-button button {
     border: none;
@@ -73,18 +73,18 @@ mat-card {
     border-radius: 8px;
     transition: background-color 0.3s;
   }
-  
+
   .check-button button:hover {
     background-color: #e0d6c5; /* Efeito no hover */
   }
-  
+
   /* Lado direito (botão fechar) */
   .right {
     display: flex;
     align-items: center;
     gap: 0.5rem;
   }
-  
+
   /* Input genérico */
   input {
     height: 1.7rem;
@@ -94,14 +94,14 @@ mat-card {
     border-radius: 4px;
     padding: 0 0.5rem;
   }
-  
+
   /* Botão genérico */
   button {
     border: none;
     background-color: #f7efe1;
     cursor: pointer;
   }
-  
+
   /* Botão adicionar no modo plus */
   .adicionar button {
     height: 3rem;
@@ -113,7 +113,7 @@ mat-card {
     background-color: #f7efe1;
     transition: background-color 0.3s;
   }
-  
+
   .adicionar button:hover {
     background-color: #e0d6c5;
   }
@@ -121,4 +121,4 @@ mat-card {
     display: flex;
     justify-content: center;
     width: 100%;
-  }  
+  }

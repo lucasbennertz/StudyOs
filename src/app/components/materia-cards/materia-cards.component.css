@@ -1,8 +1,9 @@
 mat-card{
     margin: 8px;
-    background-color: #f7efe1;
+    background-color: #102846;
     border: none;
     box-shadow: 0px 0px 5px 0.5px grey;
+    color: white;
 }
 mat-card-content{
     display: flex;
@@ -16,10 +17,12 @@ mat-card-content{
 input{
     height: 1.7rem;
     font-size: 1rem;
-    background-color: #f7efe1;
+    background-color: #102846;
     border: 1px solid grey;
+    color: white;
 }
 button{
     border: none;
-    background-color: #f7efe1;
+    color: white;
+    background-color: #102846;
 }

@@ -30,13 +30,14 @@ export class CreateComponent {
       {
         next: (res) => {
           console.log(res)
+          this.atualizar.emit();
+          this.changeAddMode();
         },
         error: (err) => {
           console.log("tem erro em algm lugar mn" + err);
         }
       }
     )
-    this.atualizar.emit();
-    this.changeAddMode();
+
   }
 }

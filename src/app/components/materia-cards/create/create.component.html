@@ -1,7 +1,7 @@
 <mat-card>
     <mat-card-content class="verdade" *ngIf="addMode; else plusMode">
         <span class="left">
-            <input type="text" #inputName >
+            <input type="text" #inputName (keydown.enter)="createMatter(inputName.value)">
             <button (click)="createMatter(inputName.value)">
                 <mat-icon>check</mat-icon>
             </button>
@@ -18,7 +18,7 @@
                 <button (click)="changeAddMode()">
                     <mat-icon>add</mat-icon>
                 </button>
-            </span>    
+            </span>
         </mat-card-content>
     </ng-template>
 </mat-card>
