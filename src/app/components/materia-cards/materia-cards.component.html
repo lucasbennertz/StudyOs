@@ -3,7 +3,7 @@
         <span class="left" *ngIf="!editMode; else otroModo">{{matterName}}</span>
         <ng-template #otroModo>
             <span class="left">
-                <input type="text" [value]="matterName" #inputName >
+                <input type="text" [value]="matterName" #inputName (keydown.enter)="updateName(inputName.value, matterId)" >
                 <button (click)="updateName(inputName.value, matterId)">
                     <mat-icon>check</mat-icon>
                 </button>

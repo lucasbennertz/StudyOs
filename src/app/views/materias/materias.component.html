@@ -1,4 +1,4 @@
-<div *ngIf="matters.length > 0">
+<div *ngIf="matters != null">
     <app-materia-cards *ngFor="let matter of matters" [matterName]="matter.nome" [matterId]="matter.id" (atualizou)="carregarMaterias()"></app-materia-cards>
 </div>
 <app-create (atualizar)="carregarMaterias()"></app-create>

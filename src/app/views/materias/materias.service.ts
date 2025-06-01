@@ -9,8 +9,8 @@ import { AnnotationModel } from './annotation.model';
 })
 export class MateriasService {
   annotationUrl: string =
-    'https://api-annotationsbymatters.railway.internal/annotations';
-  mattersUrl: string = 'https://api-annotationsbymatters.railway.internal/matters';
+    'http://localhost:8080/annotations';
+  mattersUrl: string = 'http://localhost:8080/matters';
   constructor(private http: HttpClient) {}
 
   readMatter(): Observable<MatterModel[]> {
