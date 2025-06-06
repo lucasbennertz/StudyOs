@@ -8,13 +8,12 @@ import { AnnotationModel } from './annotation.model';
   providedIn: 'root',
 })
 export class MateriasService {
-  annotationUrl: string =
-    'http://localhost:8080/annotations';
-  mattersUrl: string = 'http://localhost:8080/matters';
+  annotationUrl?: string = process.env['ANNOTATIONS_URL'];
+  mattersUrl?: string = process.env['MATTERS_URL'];
   constructor(private http: HttpClient) {}
 
   readMatter(): Observable<MatterModel[]> {
-    return this.http.get<MatterModel[]>(this.mattersUrl);
+    return this.http.get<MatterModel[]>(this.mattersUrl!);
   }
   changeMatterName(
     matterId: string,
@@ -28,7 +27,7 @@ export class MateriasService {
     return this.http.delete<MatterModel[]>(this.mattersUrl + '/' + matterId);
   }
   createMatter(matterName: String): Observable<MatterModel> {
-    return this.http.post<MatterModel>(this.mattersUrl, { nome: matterName });
+    return this.http.post<MatterModel>(this.mattersUrl!, { nome: matterName });
   }
   getAnnotations(matterId: string): Observable<AnnotationModel[]> {
     return this.http.get<AnnotationModel[]>(
