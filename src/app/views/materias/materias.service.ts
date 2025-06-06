@@ -3,13 +3,14 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MatterModel } from './materia.model';
 import { AnnotationModel } from './annotation.model';
+import { environment } from '../../../environment/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class MateriasService {
-  annotationUrl?: string = process.env['ANNOTATIONS_URL'];
-  mattersUrl?: string = process.env['MATTERS_URL'];
+  annotationUrl?: string = environment.annotationURL;
+  mattersUrl?: string = environment.matterURL;
   constructor(private http: HttpClient) {}
 
   readMatter(): Observable<MatterModel[]> {
